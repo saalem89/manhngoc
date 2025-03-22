@@ -1,0 +1,16 @@
+# Bước 1: Tạo thư mục và di chuyển vào đó
+mkdir manhngoc
+cd thuoc-nam-website
+
+# Bước 2: Tạo file index.html rồi dán code vào (hoặc copy file vào thư mục)
+# (nếu bạn đã có sẵn file index.html thì bỏ bước này)
+
+# Bước 3: Khởi tạo Git
+git init
+git remote add origin https://github.com/<saalem89>/manhngoc.git
+
+# Bước 4: Commit và đẩy lên GitHub
+git add .
+git commit -m "Upload manhngoc"
+git branch -M main
+git push -u origin main
