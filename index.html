@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đông Y Mạnh Ngọc - Bài Thuốc Gia Truyền Đặc Trị</title>
+    <link rel="icon" href="https://i.imgur.com/I1zhNQn.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -188,16 +189,9 @@
         }
         
         .main-content {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .left-side {
-            flex: 1;
-        }
-        
-        .right-side {
-            flex: 1;
+            display: block;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
         .product-intro {
@@ -212,12 +206,13 @@
         .product {
             display: flex;
             flex-direction: column;
-            margin-bottom: 40px;
+            margin: 40px auto;
             background-color: white;
             border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            padding: 20px;
+            padding: 30px;
+            max-width: 900px;
         }
         
         .section-header {
@@ -494,10 +489,6 @@
             .clinic-name h1 {
                 font-size: 2.2rem;
             }
-            
-            .main-content {
-                flex-direction: column;
-            }
         }
 
         @media (max-width: 768px) {
@@ -536,6 +527,11 @@
             
             .banner-images img {
                 min-width: 150px;
+                margin-bottom: 10px;
+            }
+            
+            .product {
+                padding: 20px;
             }
         }
     </style>
@@ -604,201 +600,195 @@
         </div>
         
         <div class="main-content">
-            <div class="left-side">
-                <!-- Để trống để thêm hình ảnh sau -->
+            <div id="about" class="product-intro">
+                <div class="section-header">
+                    <h2>Giới Thiệu Nhà Thuốc</h2>
+                </div>
+                <p>Lương y: Nguyễn Mạnh Ngọc sinh năm 1958, quê gốc tại Thái Bình nhưng hiện đang sinh sống và hành nghề tại thành phố Thái Nguyên. Sinh ra trong gia đình có truyền thống y học cổ truyền lâu đời, từ nhỏ ông đã được ông nội dẫn lên rừng hái thuốc và truyền dạy những bí thuật sử dụng thảo dược quý để chữa các bệnh ngoài da như: viêm da, nấm ngứa, tổ đỉa, á sừng, đặc biệt là sùi mào gà và mụn cóc sinh dục.</p>
+                
+                <p>Sau này ông công tác trong quân đội. Năm 2007 ông về hưu mang quân hàm Trung tá. Tuy nghỉ hưu nhưng tình yêu với nghề thuốc gia truyền đã ngấm sâu trong máu của ông, vì vậy cho đến nay ông vẫn tiếp tục chữa bệnh cứu người bằng cả lương tâm của một thầy thuốc.</p>
+                
+                <div class="certificates">
+                    <div class="section-header">
+                        <h3>Chứng Nhận & Giấy Phép</h3>
+                    </div>
+                    <div class="certificate-grid">
+                        <div class="certificate-item">
+                            <img src="https://i.imgur.com/Uuws4Gn.jpg" alt="Thẻ hội viên Hội đồng Y Việt Nam">
+                            <p>Thẻ hội viên Hội đồng Y Việt Nam<br>Số: 20801469</p>
+                        </div>
+                        <div class="certificate-item">
+                            <img src="https://i.imgur.com/2iL0NJY.jpg" alt="Vinh danh nghề nghiệp">
+                            <p>Vinh danh Lương y Nguyễn Mạnh Ngọc<br>Hội đồng Y tính Thái Nguyên (2018)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="guarantee">
+                    <h3>CAM KẾT CỦA CHÚNG TÔI</h3>
+                    <p>✔ 100% thảo dược tự nhiên | ✔ Không tác dụng phụ | ✔ Hiệu quả lâu dài | ✔ Được cấp phép bởi Hội đồng Y Việt Nam</p>
+                </div>
             </div>
             
-            <div class="right-side">
-                <div id="about" class="product-intro">
-                    <div class="section-header">
-                        <h2>Giới Thiệu Nhà Thuốc</h2>
-                    </div>
-                    <p>Lương y: Nguyễn Mạnh Ngọc sinh năm 1958, quê gốc tại Thái Bình nhưng hiện đang sinh sống và hành nghề tại thành phố Thái Nguyên. Sinh ra trong gia đình có truyền thống y học cổ truyền lâu đời, từ nhỏ ông đã được ông nội dẫn lên rừng hái thuốc và truyền dạy những bí thuật sử dụng thảo dược quý để chữa các bệnh ngoài da như: viêm da, nấm ngứa, tổ đỉa, á sừng, đặc biệt là sùi mào gà và mụn cóc sinh dục.</p>
-                    
-                    <p>Sau này ông công tác trong quân đội. Năm 2007 ông về hưu mang quân hàm Trung tá. Tuy nghỉ hưu nhưng tình yêu với nghề thuốc gia truyền đã ngấm sâu trong máu của ông, vì vậy cho đến nay ông vẫn tiếp tục chữa bệnh cứu người bằng cả lương tâm của một thầy thuốc.</p>
-                    
-                    <div class="certificates">
-                        <div class="section-header">
-                            <h3>Chứng Nhận & Giấy Phép</h3>
-                        </div>
-                        <div class="certificate-grid">
-                            <div class="certificate-item">
-                                <img src="https://i.imgur.com/Uuws4Gn.jpg" alt="Thẻ hội viên Hội đồng Y Việt Nam">
-                                <p>Thẻ hội viên Hội đồng Y Việt Nam<br>Số: 20801469</p>
-                            </div>
-                            <div class="certificate-item">
-                                <img src="https://i.imgur.com/2iL0NJY.jpg" alt="Vinh danh nghề nghiệp">
-                                <p>Vinh danh Lương y Nguyễn Mạnh Ngọc<br>Hội đồng Y tính Thái Nguyên (2015)</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="guarantee">
-                        <h3>CAM KẾT CỦA CHÚNG TÔI</h3>
-                        <p>✔ 100% thảo dược tự nhiên | ✔ Không tác dụng phụ | ✔ Hiệu quả lâu dài | ✔ Được cấp phép bởi Hội đồng Y Việt Nam</p>
-                    </div>
+            <!-- Bài thuốc trị sùi mào gà, mụn sinh dục -->
+            <div id="suimao" class="product">
+                <div style="text-align: center;">
+                    <span class="badge">Bài thuốc gia truyền</span>
                 </div>
+                <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ SÙI MÀO GÀ - MỤN SINH DỤC</h3>
                 
-                <!-- Bài thuốc trị sùi mào gà, mụn sinh dục -->
-                <div id="suimao" class="product">
-                    <div style="text-align: center;">
-                        <span class="badge">Bài thuốc gia truyền</span>
-                    </div>
-                    <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ SÙI MÀO GÀ - MỤN SINH DỤC</h3>
-                    
-                    <div class="cause-symptoms">
-                        <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
-                        <p><strong>Nguyên nhân:</strong> Do virus HPV (Human Papilloma Virus) gây ra, lây truyền chủ yếu qua đường tình dục.</p>
-                        <p><strong>Triệu chứng:</strong></p>
-                        <ul>
-                            <li>Xuất hiện các nốt sùi nhỏ, mềm, màu hồng hoặc nâu</li>
-                            <li>Các nốt có thể mọc riêng lẻ hoặc thành từng cụm giống hoa súp lơ</li>
-                            <li>Ngứa ngáy, khó chịu vùng bị tổn thương</li>
-                            <li>Có thể chảy máu khi va chạm</li>
-                        </ul>
-                    </div>
-                    
-                    <h4 class="section-title">Công dụng bài thuốc</h4>
-                    <ul class="herbal-list">
-                        <li>Tiêu diệt virus HPV gây bệnh</li>
-                        <li>Làm rụng các nốt sùi tự nhiên</li>
-                        <li>Ngăn ngừa tái phát</li>
-                        <li>Tái tạo da, không để lại sẹo</li>
+                <div class="cause-symptoms">
+                    <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
+                    <p><strong>Nguyên nhân:</strong> Do virus HPV (Human Papilloma Virus) gây ra, lây truyền chủ yếu qua đường tình dục.</p>
+                    <p><strong>Triệu chứng:</strong></p>
+                    <ul>
+                        <li>Xuất hiện các nốt sùi nhỏ, mềm, màu hồng hoặc nâu</li>
+                        <li>Các nốt có thể mọc riêng lẻ hoặc thành từng cụm giống hoa súp lơ</li>
+                        <li>Ngứa ngáy, khó chịu vùng bị tổn thương</li>
+                        <li>Có thể chảy máu khi va chạm</li>
                     </ul>
-                    
-                    <h4 class="section-title">Thành phần chính</h4>
-                    <p>Hoàng đằng, diếp cá, ké đầu ngựa, bồ công anh, thổ phục linh, cùng nhiều vị thuốc quý khác.</p>
-                    
-                    <div class="testimonial">
-                        "Tôi đã điều trị sùi mào gà ở nhiều nơi không khỏi, sau khi dùng thuốc của Đông Y Mạnh Ngọc 3 tháng, các nốt sùi rụng hết và 2 năm nay không tái phát." - Anh T. (Hà Nội)
-                    </div>
                 </div>
                 
-                <!-- Bài thuốc trị viêm xoang -->
-                <div id="viemxoang" class="product">
-                    <div style="text-align: center;">
-                        <span class="badge">Bài thuốc gia truyền</span>
-                    </div>
-                    <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ VIÊM XOANG MÃN TÍNH</h3>
-                    
-                    <div class="cause-symptoms">
-                        <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
-                        <p><strong>Nguyên nhân:</strong> Do nhiễm khuẩn, dị ứng, cấu trúc mũi bất thường hoặc các bệnh lý về đường hô hấp.</p>
-                        <p><strong>Triệu chứng:</strong></p>
-                        <ul>
-                            <li>Nghẹt mũi, chảy nước mũi màu vàng/xanh</li>
-                            <li>Đau nhức vùng mặt, đặc biệt là trán, má và mũi</li>
-                            <li>Giảm khứu giác, hơi thở có mùi</li>
-                            <li>Ho, đau họng, có thể sốt nhẹ</li>
-                        </ul>
-                    </div>
-                    
-                    <h4 class="section-title">Công dụng bài thuốc</h4>
-                    <ul class="herbal-list">
-                        <li>Tiêu viêm, giảm phù nề niêm mạc xoang</li>
-                        <li>Thông mũi, hết nghẹt, hết chảy dịch</li>
-                        <li>Diệt khuẩn, chống dị ứng</li>
-                        <li>Phục hồi niêm mạc xoang</li>
+                <h4 class="section-title">Công dụng bài thuốc</h4>
+                <ul class="herbal-list">
+                    <li>Tiêu diệt virus HPV gây bệnh</li>
+                    <li>Làm rụng các nốt sùi tự nhiên</li>
+                    <li>Ngăn ngừa tái phát</li>
+                    <li>Tái tạo da, không để lại sẹo</li>
+                </ul>
+                
+                <h4 class="section-title">Thành phần chính</h4>
+                <p>Hoàng đằng, diếp cá, ké đầu ngựa, bồ công anh, thổ phục linh, cùng nhiều vị thuốc quý khác.</p>
+                
+                <div class="testimonial">
+                    "Tôi đã điều trị sùi mào gà ở nhiều nơi không khỏi, sau khi dùng thuốc của Đông Y Mạnh Ngọc 3 tháng, các nốt sùi rụng hết và 2 năm nay không tái phát." - Anh T. (Hà Nội)
+                </div>
+            </div>
+            
+            <!-- Bài thuốc trị viêm xoang -->
+            <div id="viemxoang" class="product">
+                <div style="text-align: center;">
+                    <span class="badge">Bài thuốc gia truyền</span>
+                </div>
+                <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ VIÊM XOANG MÃN TÍNH</h3>
+                
+                <div class="cause-symptoms">
+                    <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
+                    <p><strong>Nguyên nhân:</strong> Do nhiễm khuẩn, dị ứng, cấu trúc mũi bất thường hoặc các bệnh lý về đường hô hấp.</p>
+                    <p><strong>Triệu chứng:</strong></p>
+                    <ul>
+                        <li>Nghẹt mũi, chảy nước mũi màu vàng/xanh</li>
+                        <li>Đau nhức vùng mặt, đặc biệt là trán, má và mũi</li>
+                        <li>Giảm khứu giác, hơi thở có mùi</li>
+                        <li>Ho, đau họng, có thể sốt nhẹ</li>
                     </ul>
-                    
-                    <h4 class="section-title">Thành phần chính</h4>
-                    <p>Tân di, bạch chỉ, hoàng kỳ, kim ngân hoa, ké đầu ngựa, cát cánh, cùng nhiều vị thuốc bí truyền.</p>
-                    
-                    <div class="testimonial">
-                        "Bị viêm xoang 10 năm, tôi đã dùng đủ các loại thuốc không khỏi. Sau 2 liệu trình thuốc của Đông Y Mạnh Ngọc, bệnh đã thuyên giảm 90%, không còn đau đầu, nghẹt mũi." - Chị L. (TP.HCM)
-                    </div>
                 </div>
                 
-                <!-- Bài thuốc trị zona thần kinh -->
-                <div id="zona" class="product">
-                    <div style="text-align: center;">
-                        <span class="badge">Bài thuốc gia truyền</span>
-                    </div>
-                    <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ ZONA THẦN KINH</h3>
-                    
-                    <div class="cause-symptoms">
-                        <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
-                        <p><strong>Nguyên nhân:</strong> Do virus Varicella-zoster (cùng họ với virus gây bệnh thủy đậu) tái hoạt động.</p>
-                        <p><strong>Triệu chứng:</strong></p>
-                        <ul>
-                            <li>Đau rát, ngứa một vùng da</li>
-                            <li>Xuất hiện mụn nước thành dải, vỡ ra tạo vảy</li>
-                            <li>Sốt, mệt mỏi, nhức đầu</li>
-                            <li>Đau dây thần kinh kéo dài sau khi phát ban biến mất</li>
-                        </ul>
-                    </div>
-                    
-                    <h4 class="section-title">Công dụng bài thuốc</h4>
-                    <ul class="herbal-list">
-                        <li>Giảm đau rát chỉ sau 3-5 ngày</li>
-                        <li>Làm khô mụn nước, ngừa bội nhiễm</li>
-                        <li>Ngăn chặn biến chứng đau thần kinh</li>
-                        <li>Tái tạo da, giảm thâm sẹo</li>
+                <h4 class="section-title">Công dụng bài thuốc</h4>
+                <ul class="herbal-list">
+                    <li>Tiêu viêm, giảm phù nề niêm mạc xoang</li>
+                    <li>Thông mũi, hết nghẹt, hết chảy dịch</li>
+                    <li>Diệt khuẩn, chống dị ứng</li>
+                    <li>Phục hồi niêm mạc xoang</li>
+                </ul>
+                
+                <h4 class="section-title">Thành phần chính</h4>
+                <p>Tân di, bạch chỉ, hoàng kỳ, kim ngân hoa, ké đầu ngựa, cát cánh, cùng nhiều vị thuốc bí truyền.</p>
+                
+                <div class="testimonial">
+                    "Bị viêm xoang 10 năm, tôi đã dùng đủ các loại thuốc không khỏi. Sau 2 liệu trình thuốc của Đông Y Mạnh Ngọc, bệnh đã thuyên giảm 90%, không còn đau đầu, nghẹt mũi." - Chị L. (TP.HCM)
+                </div>
+            </div>
+            
+            <!-- Bài thuốc trị zona thần kinh -->
+            <div id="zona" class="product">
+                <div style="text-align: center;">
+                    <span class="badge">Bài thuốc gia truyền</span>
+                </div>
+                <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ ZONA THẦN KINH</h3>
+                
+                <div class="cause-symptoms">
+                    <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
+                    <p><strong>Nguyên nhân:</strong> Do virus Varicella-zoster (cùng họ với virus gây bệnh thủy đậu) tái hoạt động.</p>
+                    <p><strong>Triệu chứng:</strong></p>
+                    <ul>
+                        <li>Đau rát, ngứa một vùng da</li>
+                        <li>Xuất hiện mụn nước thành dải, vỡ ra tạo vảy</li>
+                        <li>Sốt, mệt mỏi, nhức đầu</li>
+                        <li>Đau dây thần kinh kéo dài sau khi phát ban biến mất</li>
                     </ul>
-                    
-                    <h4 class="section-title">Thành phần chính</h4>
-                    <p>Hoàng liên, hoàng bá, sinh địa, đan sâm, đương quy, kim ngân hoa, cùng nhiều vị thuốc bí truyền.</p>
-                    
-                    <div class="testimonial">
-                        "Bị zona ở mặt rất đau, tôi sợ sẽ để lại sẹo. May mắn biết đến Đông Y Mạnh Ngọc, sau 1 tuần đã đỡ đau, 2 tuần thì khô mụn nước và không để lại sẹo." - Bác N. (Đà Nẵng)
+                </div>
+                
+                <h4 class="section-title">Công dụng bài thuốc</h4>
+                <ul class="herbal-list">
+                    <li>Giảm đau rát chỉ sau 3-5 ngày</li>
+                    <li>Làm khô mụn nước, ngừa bội nhiễm</li>
+                    <li>Ngăn chặn biến chứng đau thần kinh</li>
+                    <li>Tái tạo da, giảm thâm sẹo</li>
+                </ul>
+                
+                <h4 class="section-title">Thành phần chính</h4>
+                <p>Hoàng liên, hoàng bá, sinh địa, đan sâm, đương quy, kim ngân hoa, cùng nhiều vị thuốc bí truyền.</p>
+                
+                <div class="testimonial">
+                    "Bị zona ở mặt rất đau, tôi sợ sẽ để lại sẹo. May mắn biết đến Đông Y Mạnh Ngọc, sau 1 tuần đã đỡ đau, 2 tuần thì khô mụn nước và không để lại sẹo." - Bác N. (Đà Nẵng)
+                </div>
+            </div>
+            
+            <!-- Phản hồi khách hàng qua Zalo -->
+            <div id="feedback" class="customer-feedback">
+                <h2 class="feedback-title">PHẢN HỒI THỰC TẾ CỦA KHÁCH HÀNG QUA ZALO</h2>
+                <div class="feedback-grid">
+                    <div class="feedback-item">
+                        <img src="https://i.imgur.com/jFZhVHg.jpg" alt="Phản hồi khách hàng 1">
+                    </div>
+                    <div class="feedback-item">
+                        <img src="https://i.imgur.com/Zm4qUk5.jpg" alt="Phản hồi khách hàng 2">
+                    </div>
+                    <div class="feedback-item">
+                        <img src="https://i.imgur.com/BmlkfEs.jpg" alt="Phản hồi khách hàng 3">
+                    </div>
+                    <div class="feedback-item">
+                        <img src="https://i.imgur.com/O106e0E.jpg" alt="Phản hồi khách hàng 4">
+                    </div>
+                    <div class="feedback-item">
+                        <img src="https://i.imgur.com/4tuusBo.jpg" alt="Phản hồi khách hàng 5">
+                    </div>
+                    <div class="feedback-item">
+                        <img src="https://i.imgur.com/QDyuU3h.jpg" alt="Phản hồi khách hàng 6">
+                    </div>
+                    <div class="feedback-item">
+                        <img src="https://i.imgur.com/etFwzwn.jpg" alt="Phản hồi khách hàng 7">
+                    </div>
+                </div>
+            </div>
+            
+            <div id="contact" class="guarantee">
+                <h3>QUY TRÌNH ĐIỀU TRỊ</h3>
+                <p>1. Khám & tư vấn miễn phí → 2. Kê đơn thuốc phù hợp → 3. Giao thuốc tận nhà → 4. Theo dõi trong quá trình dùng thuốc</p>
+                <div class="footer-contact-info">
+                    <div class="footer-contact-item" onclick="window.open('https://maps.google.com?q=Số+213+đường+Quang+Trung,+P.+Tân+Thịnh,+TP.+Thái+Nguyên')">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Số 213 đường Quang Trung, P. Tân Thịnh, TP. Thái Nguyên</span>
+                    </div>
+                    <div class="footer-contact-item" onclick="window.open('tel:0396147774')">
+                        <i class="fas fa-phone"></i>
+                        <span>Điện thoại: <strong>0396.147.774</strong></span>
                     </div>
                 </div>
                 
-                <!-- Phản hồi khách hàng qua Zalo -->
-                <div id="feedback" class="customer-feedback">
-                    <h2 class="feedback-title">PHẢN HỒI THỰC TẾ CỦA KHÁCH HÀNG QUA ZALO</h2>
-                    <div class="feedback-grid">
-                        <div class="feedback-item">
-                            <img src="https://i.imgur.com/jFZhVHg.jpg" alt="Phản hồi khách hàng 1">
-                        </div>
-                        <div class="feedback-item">
-                            <img src="https://i.imgur.com/Zm4qUk5.jpg" alt="Phản hồi khách hàng 2">
-                        </div>
-                        <div class="feedback-item">
-                            <img src="https://i.imgur.com/BmlkfEs.jpg" alt="Phản hồi khách hàng 3">
-                        </div>
-                        <div class="feedback-item">
-                            <img src="https://i.imgur.com/O106e0E.jpg" alt="Phản hồi khách hàng 4">
-                        </div>
-                        <div class="feedback-item">
-                            <img src="https://i.imgur.com/4tuusBo.jpg" alt="Phản hồi khách hàng 5">
-                        </div>
-                        <div class="feedback-item">
-                            <img src="https://i.imgur.com/QDyuU3h.jpg" alt="Phản hồi khách hàng 6">
-                        </div>
-                        <div class="feedback-item">
-                            <img src="https://i.imgur.com/etFwzwn.jpg" alt="Phản hồi khách hàng 7">
-                        </div>
-                    </div>
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@dongymanhngoc" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@dongymanhngoc" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61575060365524" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://luongymanhngoc.xyz" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
                 </div>
                 
-                <div id="contact" class="guarantee">
-                    <h3>QUY TRÌNH ĐIỀU TRỊ</h3>
-                    <p>1. Khám & tư vấn miễn phí → 2. Kê đơn thuốc phù hợp → 3. Giao thuốc tận nhà → 4. Theo dõi trong quá trình dùng thuốc</p>
-                    <div class="footer-contact-info">
-                        <div class="footer-contact-item" onclick="window.open('https://maps.google.com?q=Số+213+đường+Quang+Trung,+P.+Tân+Thịnh,+TP.+Thái+Nguyên')">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Số 213 đường Quang Trung, P. Tân Thịnh, TP. Thái Nguyên</span>
-                        </div>
-                        <div class="footer-contact-item" onclick="window.open('tel:0396147774')">
-                            <i class="fas fa-phone"></i>
-                            <span>Điện thoại: <strong>0396.147.774</strong></span>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-social">
-                        <a href="https://www.youtube.com/@dongymanhngoc" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.tiktok.com/@dongymanhngoc" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61575060365524" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://luongymanhngoc.xyz" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
-                    </div>
-                    
-                    <!-- Nút Zalo phía dưới cùng -->
-                    <div style="text-align: center; margin-top: 20px;">
-                        <a href="https://zalo.me/0366666000" class="zalo-button" target="_blank">
-                            <i class="fab fa-zalo"></i> Tư vấn miễn phí qua Zalo: 0366666000
-                        </a>
-                    </div>
+                <!-- Nút Zalo phía dưới cùng -->
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="https://zalo.me/0366666000" class="zalo-button" target="_blank">
+                        <i class="fab fa-zalo"></i> Tư vấn miễn phí qua Zalo: 0366666000
+                    </a>
                 </div>
             </div>
         </div>
@@ -809,10 +799,8 @@
         document.querySelectorAll('.contact-item, .footer-contact-item').forEach(item => {
             item.addEventListener('click', function() {
                 if (this.querySelector('.fa-phone')) {
-                    // Mở ứng dụng gọi điện
                     window.open('tel:0396147774');
                 } else if (this.querySelector('.fa-map-marker-alt')) {
-                    // Mở bản đồ chỉ đường
                     window.open('https://maps.google.com?q=Số+213+đường+Quang+Trung,+P.+Tân+Thịnh,+TP.+Thái+Nguyên');
                 }
             });
