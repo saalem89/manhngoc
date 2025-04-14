@@ -1,81 +1,822 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thuốc Nam Lương Y Mạnh Ngọc - Trị Sùi Mào Gà</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: #f8f8f8; color: #333; }
-    header { background: #2d6a4f; color: white; padding: 20px; text-align: center; }
-    nav { text-align: center; background: #40916c; padding: 10px; }
-    nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
-    section { padding: 20px; max-width: 900px; margin: auto; background: white; margin-top: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .cta { text-align: center; margin: 20px 0; }
-    .cta a { background: #2d6a4f; color: white; padding: 12px 25px; text-decoration: none; font-size: 18px; border-radius: 8px; display: inline-block; }
-    footer { background: #2d6a4f; color: white; text-align: center; padding: 10px; margin-top: 40px; }
-    .chat-box { background: #e0f7fa; border-radius: 10px; padding: 15px; margin-bottom: 15px; }
-    .chat-name { font-weight: bold; color: #0277bd; margin-bottom: 5px; }
-    .chat-time { font-size: 0.9em; color: gray; margin-bottom: 5px; }
-    .chat-text { background: #ffffff; border-radius: 8px; padding: 10px; display: inline-block; max-width: 80%; }
-    form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: 0 auto; }
-    input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-    button { background: #40916c; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
-    button:hover { background: #2d6a4f; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đông Y Mạnh Ngọc - Bài Thuốc Gia Truyền Đặc Trị</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f5f0;
+        }
+        
+        /* Banner Style */
+        .herbal-banner {
+            position: relative;
+            height: 400px;
+            background: 
+                linear-gradient(rgba(10, 92, 54, 0.75), rgba(10, 92, 54, 0.75)),
+                url('https://i.imgur.com/uQKEkK4.jpg') center/cover no-repeat;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 72, 36, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .banner-content {
+            max-width: 90%;
+            color: white;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .clinic-name h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            line-height: 1.1;
+            word-wrap: break-word;
+        }
+
+        .specialties {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 20px auto;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            max-width: 600px;
+        }
+
+        .specialty-badge {
+            display: inline-block;
+            background: #e8c887;
+            color: #0a5c36;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .specialty-list {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .specialty-item {
+            color: #f1d8a6;
+            font-weight: 500;
+            margin: 0 4px;
+        }
+
+        .separator {
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0 4px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 1rem;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            color: #e8c887;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            color: #e8c887;
+            width: 18px;
+            text-align: center;
+        }
+
+        .contact-item.highlight {
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: #e8c887;
+        }
+
+        .herbal-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .herbal-decoration img {
+            position: absolute;
+            opacity: 0.12;
+        }
+
+        .herb-1 {
+            top: -50px;
+            right: -50px;
+            height: 250px;
+            transform: rotate(30deg);
+        }
+
+        .herb-2 {
+            bottom: -80px;
+            right: 100px;
+            height: 200px;
+            transform: rotate(-15deg);
+        }
+
+        /* Main Content Style */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        
+        .header-info p {
+            margin: 5px 0;
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .left-side {
+            flex: 1;
+        }
+        
+        .right-side {
+            flex: 1;
+        }
+        
+        .product-intro {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        
+        .product {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .section-header h2 {
+            color: #0a5c36;
+            border-bottom: 2px solid #e8c887;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .badge {
+            background-color: #e8c887;
+            color: #0a5c36;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+            display: inline-block;
+            margin: 0 auto 15px;
+            font-weight: bold;
+            text-align: center;
+            width: fit-content;
+        }
+        
+        .herbal-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .herbal-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #ddd;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .herbal-list li:before {
+            content: "✓";
+            color: #0a5c36;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .testimonial {
+            background-color: #f0f7f4;
+            padding: 20px;
+            border-left: 4px solid #0a5c36;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        .guarantee {
+            background-color: #0a5c36;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .certificates {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f0f7f4;
+            border-radius: 5px;
+        }
+        
+        .certificate-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+        
+        .certificate-item {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .certificate-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        
+        .certificate-item p {
+            font-size: 14px;
+            color: #0a5c36;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .customer-feedback {
+            margin-top: 40px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .feedback-title {
+            color: #0a5c36;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .feedback-item img {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .footer-contact-item:hover {
+            color: #e8c887;
+        }
+        
+        .footer-contact-item i {
+            margin-right: 10px;
+            color: #e8c887;
+        }
+        
+        .zalo-button {
+            background-color: #0068ff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 20px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .zalo-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 104, 255, 0.3);
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            background-color: #e8c887;
+            padding: 15px 0;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .nav-menu a {
+            color: #0a5c36;
+            text-decoration: none;
+            padding: 0 15px;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+        
+        .nav-menu a:hover {
+            color: #d35400;
+        }
+        
+        .section-title {
+            color: #0a5c36;
+            border-left: 4px solid #e8c887;
+            padding-left: 10px;
+            margin: 25px 0 15px 0;
+        }
+        
+        .cause-symptoms {
+            background-color: #f0f7f4;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .banner-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        
+        .banner-images img {
+            flex: 1;
+            min-width: 200px;
+            max-width: 280px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Footer Social Links */
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .footer-social a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-3px);
+            color: #e8c887;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .clinic-name h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .herbal-banner {
+                height: 380px;
+            }
+            
+            .clinic-name h1 {
+                font-size: 2.2rem;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .herbal-banner {
+                height: 420px;
+            }
+            
+            .clinic-name h1 {
+                font-size: 1.8rem;
+            }
+            
+            .specialty-list {
+                flex-direction: column;
+            }
+            
+            .separator {
+                display: none;
+            }
+            
+            .specialty-item {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            .herbal-decoration {
+                display: none;
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+            }
+            
+            .feedback-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .banner-images img {
+                min-width: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Thuốc Nam Lương Y Mạnh Ngọc</h1>
-    <p>Giải pháp điều trị sùi mào gà hiệu quả - An toàn - Không tái phát</p>
-  </header>
-
-  <nav>
-    <a href="#gioi-thieu">Giới thiệu</a>
-    <a href="#san-pham">Sản phẩm</a>
-    <a href="#feedback">Phản hồi</a>
-    <a href="#lien-he">Liên hệ</a>
-  </nav>
-
-  <section id="gioi-thieu">
-    <h2>Giới thiệu bài thuốc</h2>
-    <p>Bài thuốc Nam gia truyền từ dòng họ Lương Y Mạnh Ngọc đã giúp hàng ngàn người thoát khỏi sùi mào gà nhờ thuốc bôi và thuốc xịt đặc trị. Thành phần hoàn toàn từ thảo dược thiên nhiên như trầu không, xạ đen, khổ sâm, hoàng bá... Đặc biệt, dạng xịt giúp tiếp cận dễ dàng các vị trí khó xử lý như khoang miệng, họng hoặc vùng kín sâu bên trong – điều mà các phương pháp khác khó làm được.</p>
-    <img src="https://via.placeholder.com/800x400?text=Hinh+anh+thuoc" alt="Hình ảnh thuốc">
-  </section>
-
-  <section id="san-pham">
-    <h2>Sản phẩm</h2>
-    <ul>
-      <li><strong>Thuốc bôi:</strong> Làm khô – rụng nốt sùi.</li>
-      <li><strong>Thuốc xịt:</strong> Thấm sâu – dễ sử dụng ở vị trí khó tiếp cận như khoang miệng hoặc hậu môn.</li>
-      <li><strong>Combo 7 ngày:</strong> Dành cho người mới chớm.</li>
-      <li><strong>Combo 14 ngày:</strong> Dành cho người bị nặng/lâu năm.</li>
-    </ul>
-  </section>
-
-  <section id="feedback">
-    <h2>Phản hồi khách hàng</h2>
-    <div class="chat-box"><div class="chat-name">Khách hàng 1</div><div class="chat-time">08:12, Hôm qua</div><div class="chat-text">Xài mới 3 hôm mà đã se lại hết, em mừng rơi nước mắt luôn ạ!</div></div>
-    <div class="chat-box"><div class="chat-name">Khách hàng 2</div><div class="chat-time">14:30, Hôm nay</div><div class="chat-text">Em tưởng phải đốt điện, may gặp thuốc của lương y. Không đau, không sẹo!</div></div>
-    <div class="chat-box"><div class="chat-name">Khách hàng 3</div><div class="chat-time">19:45, 2 ngày trước</div><div class="chat-text">Cảm ơn anh, thuốc tốt thật. Không còn thấy ngứa ngáy gì nữa luôn rồi.</div></div>
-  </section>
-
-  <section id="lien-he">
-    <h2>Liên hệ tư vấn miễn phí</h2>
-    <p>👉 Gửi thuốc toàn quốc – Nhận hàng mới thanh toán.</p>
-    <div class="cta">
-      <a href="https://zalo.me/0599333222" target="_blank">💬 Nhắn Zalo tư vấn ngay</a>
+    <!-- Banner Section -->
+    <div class="herbal-banner">
+      <div class="banner-content">
+        <div class="clinic-name">
+          <h1>ĐÔNG Y MẠNH NGỌC</h1>
+        </div>
+        
+        <div class="specialties">
+          <div class="specialty-badge">Đặc trị:</div>
+          <div class="specialty-list">
+            <span class="specialty-item">Sùi mào gà</span>
+            <span class="separator">•</span>
+            <span class="specialty-item">Mụn sinh dục</span>
+            <span class="separator">•</span>
+            <span class="specialty-item">Viêm xoang mãn tính</span>
+            <span class="separator">•</span>
+            <span class="specialty-item">Zona thần kinh</span>
+          </div>
+        </div>
+        
+        <div class="contact-info">
+          <div class="contact-item" onclick="window.open('https://maps.google.com?q=Số+213+đường+Quang+Trung,+P.+Tân+Thịnh,+TP.+Thái+Nguyên')">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Số 213 đường Quang Trung, P. Tân Thịnh, TP. Thái Nguyên</span>
+          </div>
+          <div class="contact-item highlight" onclick="window.open('tel:0396147774')">
+            <i class="fas fa-phone"></i>
+            <span>Điện thoại: <strong>0396.147.774</strong></span>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <a href="https://www.youtube.com/@dongymanhngoc" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@dongymanhngoc" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61575060365524" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://luongymanhngoc.xyz" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+        </div>
+      </div>
+      
+      <div class="herbal-decoration">
+        <img src="https://i.imgur.com/JqYeARn.png" alt="Thảo dược" class="herb-1">
+        <img src="https://i.imgur.com/JqYeARn.png" alt="Thảo dược" class="herb-2">
+      </div>
     </div>
-    <p>📞 Hotline: 0599 333 222</p>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="Họ tên của bạn" required>
-      <input type="tel" name="phone" placeholder="Số điện thoại" required>
-      <textarea name="message" rows="4" placeholder="Nội dung cần tư vấn..."></textarea>
-      <button type="submit">Gửi thông tin</button>
-    </form>
-  </section>
+    
+    <div class="container">
+        <div class="nav-menu">
+            <a href="#about">Giới thiệu</a>
+            <a href="#suimao">Sùi mào gà</a>
+            <a href="#viemxoang">Viêm xoang</a>
+            <a href="#zona">Zona thần kinh</a>
+            <a href="#feedback">Phản hồi</a>
+            <a href="#contact">Liên hệ</a>
+        </div>
+        
+        <div class="banner-images">
+            <img src="https://i.imgur.com/zDzIRJK.jpg" alt="Hình ảnh nhà thuốc 1">
+            <img src="https://i.imgur.com/j5YlbeA.jpg" alt="Hình ảnh nhà thuốc 2">
+            <img src="https://i.imgur.com/CiTK62b.jpg" alt="Hình ảnh nhà thuốc 3">
+            <img src="https://i.imgur.com/DR9RJkt.jpg" alt="Hình ảnh nhà thuốc 4">
+        </div>
+        
+        <div class="main-content">
+            <div class="left-side">
+                <!-- Để trống để thêm hình ảnh sau -->
+            </div>
+            
+            <div class="right-side">
+                <div id="about" class="product-intro">
+                    <div class="section-header">
+                        <h2>Giới Thiệu Nhà Thuốc</h2>
+                    </div>
+                    <p>Lương y: Nguyễn Mạnh Ngọc sinh năm 1958, quê gốc tại Thái Bình nhưng hiện đang sinh sống và hành nghề tại thành phố Thái Nguyên. Sinh ra trong gia đình có truyền thống y học cổ truyền lâu đời, từ nhỏ ông đã được ông nội dẫn lên rừng hái thuốc và truyền dạy những bí thuật sử dụng thảo dược quý để chữa các bệnh ngoài da như: viêm da, nấm ngứa, tổ đỉa, á sừng, đặc biệt là sùi mào gà và mụn cóc sinh dục.</p>
+                    
+                    <p>Sau này ông công tác trong quân đội. Năm 2007 ông về hưu mang quân hàm Trung tá. Tuy nghỉ hưu nhưng tình yêu với nghề thuốc gia truyền đã ngấm sâu trong máu của ông, vì vậy cho đến nay ông vẫn tiếp tục chữa bệnh cứu người bằng cả lương tâm của một thầy thuốc.</p>
+                    
+                    <div class="certificates">
+                        <div class="section-header">
+                            <h3>Chứng Nhận & Giấy Phép</h3>
+                        </div>
+                        <div class="certificate-grid">
+                            <div class="certificate-item">
+                                <img src="https://i.imgur.com/Uuws4Gn.jpg" alt="Thẻ hội viên Hội đồng Y Việt Nam">
+                                <p>Thẻ hội viên Hội đồng Y Việt Nam<br>Số: 20801469</p>
+                            </div>
+                            <div class="certificate-item">
+                                <img src="https://i.imgur.com/2iL0NJY.jpg" alt="Vinh danh nghề nghiệp">
+                                <p>Vinh danh Lương y Nguyễn Mạnh Ngọc<br>Hội đồng Y tính Thái Nguyên (2015)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="guarantee">
+                        <h3>CAM KẾT CỦA CHÚNG TÔI</h3>
+                        <p>✔ 100% thảo dược tự nhiên | ✔ Không tác dụng phụ | ✔ Hiệu quả lâu dài | ✔ Được cấp phép bởi Hội đồng Y Việt Nam</p>
+                    </div>
+                </div>
+                
+                <!-- Bài thuốc trị sùi mào gà, mụn sinh dục -->
+                <div id="suimao" class="product">
+                    <div style="text-align: center;">
+                        <span class="badge">Bài thuốc gia truyền</span>
+                    </div>
+                    <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ SÙI MÀO GÀ - MỤN SINH DỤC</h3>
+                    
+                    <div class="cause-symptoms">
+                        <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
+                        <p><strong>Nguyên nhân:</strong> Do virus HPV (Human Papilloma Virus) gây ra, lây truyền chủ yếu qua đường tình dục.</p>
+                        <p><strong>Triệu chứng:</strong></p>
+                        <ul>
+                            <li>Xuất hiện các nốt sùi nhỏ, mềm, màu hồng hoặc nâu</li>
+                            <li>Các nốt có thể mọc riêng lẻ hoặc thành từng cụm giống hoa súp lơ</li>
+                            <li>Ngứa ngáy, khó chịu vùng bị tổn thương</li>
+                            <li>Có thể chảy máu khi va chạm</li>
+                        </ul>
+                    </div>
+                    
+                    <h4 class="section-title">Công dụng bài thuốc</h4>
+                    <ul class="herbal-list">
+                        <li>Tiêu diệt virus HPV gây bệnh</li>
+                        <li>Làm rụng các nốt sùi tự nhiên</li>
+                        <li>Ngăn ngừa tái phát</li>
+                        <li>Tái tạo da, không để lại sẹo</li>
+                    </ul>
+                    
+                    <h4 class="section-title">Thành phần chính</h4>
+                    <p>Hoàng đằng, diếp cá, ké đầu ngựa, bồ công anh, thổ phục linh, cùng nhiều vị thuốc quý khác.</p>
+                    
+                    <div class="testimonial">
+                        "Tôi đã điều trị sùi mào gà ở nhiều nơi không khỏi, sau khi dùng thuốc của Đông Y Mạnh Ngọc 3 tháng, các nốt sùi rụng hết và 2 năm nay không tái phát." - Anh T. (Hà Nội)
+                    </div>
+                </div>
+                
+                <!-- Bài thuốc trị viêm xoang -->
+                <div id="viemxoang" class="product">
+                    <div style="text-align: center;">
+                        <span class="badge">Bài thuốc gia truyền</span>
+                    </div>
+                    <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ VIÊM XOANG MÃN TÍNH</h3>
+                    
+                    <div class="cause-symptoms">
+                        <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
+                        <p><strong>Nguyên nhân:</strong> Do nhiễm khuẩn, dị ứng, cấu trúc mũi bất thường hoặc các bệnh lý về đường hô hấp.</p>
+                        <p><strong>Triệu chứng:</strong></p>
+                        <ul>
+                            <li>Nghẹt mũi, chảy nước mũi màu vàng/xanh</li>
+                            <li>Đau nhức vùng mặt, đặc biệt là trán, má và mũi</li>
+                            <li>Giảm khứu giác, hơi thở có mùi</li>
+                            <li>Ho, đau họng, có thể sốt nhẹ</li>
+                        </ul>
+                    </div>
+                    
+                    <h4 class="section-title">Công dụng bài thuốc</h4>
+                    <ul class="herbal-list">
+                        <li>Tiêu viêm, giảm phù nề niêm mạc xoang</li>
+                        <li>Thông mũi, hết nghẹt, hết chảy dịch</li>
+                        <li>Diệt khuẩn, chống dị ứng</li>
+                        <li>Phục hồi niêm mạc xoang</li>
+                    </ul>
+                    
+                    <h4 class="section-title">Thành phần chính</h4>
+                    <p>Tân di, bạch chỉ, hoàng kỳ, kim ngân hoa, ké đầu ngựa, cát cánh, cùng nhiều vị thuốc bí truyền.</p>
+                    
+                    <div class="testimonial">
+                        "Bị viêm xoang 10 năm, tôi đã dùng đủ các loại thuốc không khỏi. Sau 2 liệu trình thuốc của Đông Y Mạnh Ngọc, bệnh đã thuyên giảm 90%, không còn đau đầu, nghẹt mũi." - Chị L. (TP.HCM)
+                    </div>
+                </div>
+                
+                <!-- Bài thuốc trị zona thần kinh -->
+                <div id="zona" class="product">
+                    <div style="text-align: center;">
+                        <span class="badge">Bài thuốc gia truyền</span>
+                    </div>
+                    <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ ZONA THẦN KINH</h3>
+                    
+                    <div class="cause-symptoms">
+                        <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
+                        <p><strong>Nguyên nhân:</strong> Do virus Varicella-zoster (cùng họ với virus gây bệnh thủy đậu) tái hoạt động.</p>
+                        <p><strong>Triệu chứng:</strong></p>
+                        <ul>
+                            <li>Đau rát, ngứa một vùng da</li>
+                            <li>Xuất hiện mụn nước thành dải, vỡ ra tạo vảy</li>
+                            <li>Sốt, mệt mỏi, nhức đầu</li>
+                            <li>Đau dây thần kinh kéo dài sau khi phát ban biến mất</li>
+                        </ul>
+                    </div>
+                    
+                    <h4 class="section-title">Công dụng bài thuốc</h4>
+                    <ul class="herbal-list">
+                        <li>Giảm đau rát chỉ sau 3-5 ngày</li>
+                        <li>Làm khô mụn nước, ngừa bội nhiễm</li>
+                        <li>Ngăn chặn biến chứng đau thần kinh</li>
+                        <li>Tái tạo da, giảm thâm sẹo</li>
+                    </ul>
+                    
+                    <h4 class="section-title">Thành phần chính</h4>
+                    <p>Hoàng liên, hoàng bá, sinh địa, đan sâm, đương quy, kim ngân hoa, cùng nhiều vị thuốc bí truyền.</p>
+                    
+                    <div class="testimonial">
+                        "Bị zona ở mặt rất đau, tôi sợ sẽ để lại sẹo. May mắn biết đến Đông Y Mạnh Ngọc, sau 1 tuần đã đỡ đau, 2 tuần thì khô mụn nước và không để lại sẹo." - Bác N. (Đà Nẵng)
+                    </div>
+                </div>
+                
+                <!-- Phản hồi khách hàng qua Zalo -->
+                <div id="feedback" class="customer-feedback">
+                    <h2 class="feedback-title">PHẢN HỒI THỰC TẾ CỦA KHÁCH HÀNG QUA ZALO</h2>
+                    <div class="feedback-grid">
+                        <div class="feedback-item">
+                            <img src="https://i.imgur.com/jFZhVHg.jpg" alt="Phản hồi khách hàng 1">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://i.imgur.com/Zm4qUk5.jpg" alt="Phản hồi khách hàng 2">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://i.imgur.com/BmlkfEs.jpg" alt="Phản hồi khách hàng 3">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://i.imgur.com/O106e0E.jpg" alt="Phản hồi khách hàng 4">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://i.imgur.com/4tuusBo.jpg" alt="Phản hồi khách hàng 5">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://i.imgur.com/QDyuU3h.jpg" alt="Phản hồi khách hàng 6">
+                        </div>
+                        <div class="feedback-item">
+                            <img src="https://i.imgur.com/etFwzwn.jpg" alt="Phản hồi khách hàng 7">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="contact" class="guarantee">
+                    <h3>QUY TRÌNH ĐIỀU TRỊ</h3>
+                    <p>1. Khám & tư vấn miễn phí → 2. Kê đơn thuốc phù hợp → 3. Giao thuốc tận nhà → 4. Theo dõi trong quá trình dùng thuốc</p>
+                    <div class="footer-contact-info">
+                        <div class="footer-contact-item" onclick="window.open('https://maps.google.com?q=Số+213+đường+Quang+Trung,+P.+Tân+Thịnh,+TP.+Thái+Nguyên')">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Số 213 đường Quang Trung, P. Tân Thịnh, TP. Thái Nguyên</span>
+                        </div>
+                        <div class="footer-contact-item" onclick="window.open('tel:0396147774')">
+                            <i class="fas fa-phone"></i>
+                            <span>Điện thoại: <strong>0396.147.774</strong></span>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@dongymanhngoc" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@dongymanhngoc" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61575060365524" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://luongymanhngoc.xyz" target="_blank" title="Website"><i class="fas fa-globe"></i></a>
+                    </div>
+                    
+                    <!-- Nút Zalo phía dưới cùng -->
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="https://zalo.me/0366666000" class="zalo-button" target="_blank">
+                            <i class="fab fa-zalo"></i> Tư vấn miễn phí qua Zalo: 0366666000
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <footer>
-    &copy; 2025 Thuốc Nam Lương Y Mạnh Ngọc. Bảo lưu mọi quyền.
-  </footer>
+    <script>
+        // Thêm sự kiện click cho các phần tử contact (dự phòng nếu onclick không hoạt động)
+        document.querySelectorAll('.contact-item, .footer-contact-item').forEach(item => {
+            item.addEventListener('click', function() {
+                if (this.querySelector('.fa-phone')) {
+                    // Mở ứng dụng gọi điện
+                    window.open('tel:0396147774');
+                } else if (this.querySelector('.fa-map-marker-alt')) {
+                    // Mở bản đồ chỉ đường
+                    window.open('https://maps.google.com?q=Số+213+đường+Quang+Trung,+P.+Tân+Thịnh,+TP.+Thái+Nguyên');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
