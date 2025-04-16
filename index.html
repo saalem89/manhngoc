@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đông Y Mạnh Ngọc - Bài Thuốc Gia Truyền Đặc Trị</title>
-    <link rel="icon" href="https://i.imgur.com/zT6stba.png" type="image/png">
+    <link rel="icon" href="https://i.imgur.com/I1zhNQn.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -14,6 +14,7 @@
             margin: 0;
             padding: 0;
             background-color: #f9f5f0;
+            scroll-padding-top: 70px; /* Thêm dòng này để tránh bị che nội dung */
         }
         
         /* Banner Style */
@@ -390,6 +391,7 @@
             box-shadow: 0 5px 15px rgba(0, 104, 255, 0.3);
         }
         
+        /* Menu cố định khi cuộn */
         .nav-menu {
             display: flex;
             justify-content: center;
@@ -397,6 +399,15 @@
             padding: 15px 0;
             margin-bottom: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu.scrolled {
+            background-color: rgba(232, 200, 135, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .nav-menu a {
@@ -581,7 +592,7 @@
     </div>
     
     <div class="container">
-        <div class="nav-menu">
+        <div class="nav-menu" id="mainMenu">
             <a href="#about">Giới thiệu</a>
             <a href="#suimao">Sùi mào gà</a>
             <a href="#viemxoang">Viêm xoang</a>
@@ -799,6 +810,16 @@
                     window.open('https://maps.google.com?q=Số+213+đường+Quang+Trung,+P.+Tân+Thịnh,+TP.+Thái+Nguyên');
                 }
             });
+        });
+
+        // Thêm sự kiện cuộn để thay đổi style menu
+        window.addEventListener('scroll', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            if (window.scrollY > 50) {
+                navMenu.classList.add('scrolled');
+            } else {
+                navMenu.classList.remove('scrolled');
+            }
         });
     </script>
 </body>
