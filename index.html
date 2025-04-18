@@ -587,7 +587,47 @@
                 min-width: 150px;
             }
         }
-    </style>
+    
+.contact-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.contact-fixed a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    animation: pulse 1.5s infinite;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-fixed a:hover {
+    transform: scale(1.1);
+}
+
+.contact-fixed .zalo { background-color: #0084ff; }
+.contact-fixed .phone { background-color: #28a745; }
+.contact-fixed .messenger { background-color: #0078FF; }
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 132, 255, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 132, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 132, 255, 0); }
+}
+
+</style>
 </head>
 <body>
     <!-- Banner Section -->
@@ -645,16 +685,16 @@
         </div>
         
         <div class="banner-images">
-            <img src="https://i.imgur.com/zDzIRJK.jpg" alt="Hình ảnh nhà thuốc 1">
-            <img src="https://i.imgur.com/j5YlbeA.jpg" alt="Hình ảnh nhà thuốc 2">
-            <img src="https://i.imgur.com/CiTK62b.jpg" alt="Hình ảnh nhà thuốc 3">
-            <img src="https://i.imgur.com/DR9RJkt.jpg" alt="Hình ảnh nhà thuốc 4">
+            <img loading="lazy" src="https://i.imgur.com/zDzIRJK.jpg" alt="Hình ảnh nhà thuốc 1" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/j5YlbeA.jpg" alt="Hình ảnh nhà thuốc 2" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/CiTK62b.jpg" alt="Hình ảnh nhà thuốc 3" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/DR9RJkt.jpg" alt="Hình ảnh nhà thuốc 4" onerror="this.style.display='none'">
         </div>
         
         <div class="main-content">
             <div id="about" class="product-intro">
                 <div class="section-header">
-                    <h2>Giới Thiệu Nhà Thuốc</h2>
+                    <h2>Giới Thiệu về Đông Y Mạnh Ngọc</h2>
                 </div>
                 <p>Lương y: Nguyễn Mạnh Ngọc sinh năm 1958, quê gốc tại Thái Bình nhưng hiện đang sinh sống và hành nghề tại thành phố Thái Nguyên. Sinh ra trong gia đình có truyền thống y học cổ truyền lâu đời, từ nhỏ ông đã được ông nội dẫn lên rừng hái thuốc và truyền dạy những bí thuật sử dụng thảo dược quý để chữa các bệnh ngoài da như: viêm da, nấm ngứa, tổ đỉa, á sừng, đặc biệt là sùi mào gà và mụn cóc sinh dục.</p>
                 
@@ -668,11 +708,11 @@
                     </div>
                     <div class="certificate-grid">
                         <div class="certificate-item">
-                            <img src="https://i.imgur.com/Uuws4Gn.jpg" alt="Thẻ hội viên Hội đồng Y Việt Nam">
+                            <img loading="lazy" src="https://i.imgur.com/Uuws4Gn.jpg" alt="Thẻ hội viên Hội đồng Y Việt Nam" onerror="this.style.display='none'">
                             <p>Thẻ hội viên Hội đồng Y Việt Nam<br>Số: 20801469</p>
                         </div>
                         <div class="certificate-item">
-                            <img src="https://i.imgur.com/2iL0NJY.jpg" alt="Vinh danh nghề nghiệp">
+                            <img loading="lazy" src="https://i.imgur.com/2iL0NJY.jpg" alt="Vinh danh nghề nghiệp" onerror="this.style.display='none'">
                             <p>Vinh danh Lương y Nguyễn Mạnh Ngọc<br>Hội đồng Y tính Thái Nguyên (2015)</p>
                         </div>
                     </div>
@@ -681,6 +721,7 @@
                 <div class="guarantee">
                     <h3>CAM KẾT CỦA CHÚNG TÔI</h3>
                     <p>✔ 100% thảo dược tự nhiên | ✔ Không tác dụng phụ | ✔ Hiệu quả lâu dài | ✔ Được cấp phép bởi Hội đồng Y Việt Nam</p>
+                    <p>Khách hàng ở gần có thể qua trực tiếp: số nhà 213 - đường Quang Trung - phường Tân Thịnh - tp. Thái Nguyên để được lương y Nguyễn Mạnh Ngọc thăm khám. Còn những ai ở xa chúng tôi hỗ trợ tư vấn miễn phí, chuyển phát đến tận nhà và theo dõi trong suốt quá trình sử dụng thảo dược.<p>
                 </div>
             </div>
             
@@ -689,16 +730,15 @@
     <div style="text-align: center;">
         <span class="badge">Bài thuốc gia truyền</span>
     </div>
-    <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ SÙI MÀO GÀ - MỤN SINH DỤC</h3>
+    <h3 class="product-title" style="text-align: center;">THẢO DƯỢC ĐẶC TRỊ SÙI MÀO GÀ - MỤN SINH DỤC</h3>
     
     <!-- Thêm phần giới thiệu và hình ảnh ở đây -->
     <div style="margin: 20px 0; text-align: justify;">
         <p>Với kinh nghiệm hơn 40 năm trong đông y cổ truyền, Đông Y Mạnh Ngọc đã nghiên cứu và chiết xuất ra một loại thảo dược đặc trị sùi mào gà, mụn sinh dục, nấm móng tay chân, nấm đầu... Với thành phần hoàn toàn là thảo dược thiên nhiên nên độ an toàn và hiệu quả rất cao, trị tận gốc và không tái phát lại. Đặc biệt ở những khu vực khó tiếp cận như: khoang miệng...hậu môn.</p>
-        <p>Dưới đây là hình ảnh chính thức của sản phẩm. Quý khách lưu ý trong phần QR code khi quét sẽ ra trực tiếp mục sản phẩm mà quý khách đang xem:
         
         <div class="img-group" style="margin: 20px 0;">
-            <img src="https://i.imgur.com/oQVzaQg.jpg" alt="Sản phẩm trị sùi mào gà 1">
-            <img src="https://i.imgur.com/b3V3IK6.jpg" alt="Sản phẩm trị sùi mào gà 2">
+            <img loading="lazy" src="https://i.imgur.com/oQVzaQg.jpg" alt="Sản phẩm trị sùi mào gà 1" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/b3V3IK6.jpg" alt="Sản phẩm trị sùi mào gà 2" onerror="this.style.display='none'">
         </div>
     </div>
     
@@ -706,7 +746,7 @@
                     <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
                     <p><strong>Nguyên nhân:</strong> Do virus HPV (Human Papilloma Virus) gây ra, lây truyền chủ yếu qua đường tình dục.</p>
                     
-                    <img src="https://i.imgur.com/TECPVok.jpg" alt="Virus HPV" class="illustration-img">
+                    <img loading="lazy" src="https://i.imgur.com/TECPVok.jpg" alt="Virus HPV" class="illustration-img" onerror="this.style.display='none'">
                     
                     <p>Có hơn 100 chủng HPV khác nhau, trong đó HPV type 6 và 11 gây khoảng 90% trường hợp sùi mào gà. Một số type HPV nguy cơ cao (16, 18, 31, 33, 45) có thể dẫn đến ung thư cổ tử cung, hậu môn, dương vật.</p>
                     
@@ -720,9 +760,9 @@
                     </ul>
                     
                     <div class="img-group">
-                        <img src="https://i.imgur.com/bQJQaRs.jpg" alt="Triệu chứng sùi mào gà 1">
-                        <img src="https://i.imgur.com/XMjU58I.jpg" alt="Triệu chứng sùi mào gà 2">
-                        <img src="https://i.imgur.com/iBSzBMZ.jpg" alt="Triệu chứng sùi mào gà 3">
+                        <img loading="lazy" src="https://i.imgur.com/bQJQaRs.jpg" alt="Triệu chứng sùi mào gà 1" onerror="this.style.display='none'">
+                        <img loading="lazy" src="https://i.imgur.com/XMjU58I.jpg" alt="Triệu chứng sùi mào gà 2" onerror="this.style.display='none'">
+                        <img loading="lazy" src="https://i.imgur.com/iBSzBMZ.jpg" alt="Triệu chứng sùi mào gà 3" onerror="this.style.display='none'">
                     </div>
                 </div>
                 
@@ -759,13 +799,13 @@
                 <div style="text-align: center;">
                     <span class="badge">Bài thuốc gia truyền</span>
                 </div>
-                <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ VIÊM XOANG MÃN TÍNH</h3>
+                <h3 class="product-title" style="text-align: center;">THẢO DƯỢC ĐẶC TRỊ VIÊM XOANG MÃN TÍNH</h3>
                 
                 <div class="cause-symptoms">
                     <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
                     <p><strong>Nguyên nhân:</strong> Do nhiễm khuẩn, dị ứng, cấu trúc mũi bất thường hoặc các bệnh lý về đường hô hấp. Dựa vào vị trí mắc bệnh mà chúng ta có thể chia ra thành các loại viêm xoang như sau:</p>
                     
-                    <img src="https://i.imgur.com/jXHvooW.jpg" alt="Phân loại viêm xoang" class="illustration-img">
+                    <img loading="lazy" src="https://i.imgur.com/jXHvooW.jpg" alt="Phân loại viêm xoang" class="illustration-img" onerror="this.style.display='none'">
                     <p>Dựa vào thời gian mắc bệnh, chúng lại được chia thành:</p>
                     <ul>
                         <li>Viêm xoang cấp: Ở giai đoạn này, bệnh nhân thường xuất hiện các triệu chứng tương tự như cảm lạnh (hắt hơi, sổ mũi, nghẹt mũi, vùng mặt đau nhức…). Bệnh diễn tiến trong thời gian ngắn, các triệu chứng thường đột ngột xuất hiện và biến mất sau khoảng 10 – 14 ngày. Thường thì viêm xoang cấp sẽ khỏi trong thời gian dưới 4 tuần.</li>
@@ -784,12 +824,12 @@
                     </ul>
                     
                     <div class="img-group">
-                        <img src="https://i.imgur.com/of6C9iO.jpg" alt="Triệu chứng viêm xoang 1">
-                        <img src="https://i.imgur.com/JoVTngb.jpg" alt="Triệu chứng viêm xoang 2">
+                        <img loading="lazy" src="https://i.imgur.com/of6C9iO.jpg" alt="Triệu chứng viêm xoang 1" onerror="this.style.display='none'">
+                        <img loading="lazy" src="https://i.imgur.com/JoVTngb.jpg" alt="Triệu chứng viêm xoang 2" onerror="this.style.display='none'">
                     </div>
                 </div>
                 
-                <h4 class="section-title">Công dụng bài thuốc</h4>
+                <h4 class="section-title">Công dụng của thảo dược</h4>
                 <ul class="herbal-list">
                     <li>Tiêu viêm, giảm phù nề niêm mạc xoang</li>
                     <li>Thông mũi, hết nghẹt, hết chảy dịch</li>
@@ -811,9 +851,9 @@
                 </ul>
              
                 <h4 class="section-title">Cách sử dụng</h4>
-                <p>Ngày xịt hoặc nhỏ 3 lần sáng, trưa, tối. Nên duy trì sử dụng đều đặn liên tục, tránh bỏ ngắt quãng để thuốc đạt hiệu quả tối đa. Trường hợp bệnh nhân bị nặng hãy liên hệ với nhà thuốc để lấy thêm thuốc xông mũi.<p>        
+                <p>Ngày xịt hoặc nhỏ 3 lần sáng, trưa, tối. Nên duy trì sử dụng đều đặn liên tục, tránh bỏ ngắt quãng để đạt hiệu quả tối đa. Trường hợp người bệnh bị nặng hãy liên hệ với chúng tôi để lấy thêm thảo dược xông mũi.<p>        
                 <div class="testimonial">
-                    "Bị viêm xoang 10 năm, tôi đã dùng đủ các loại thuốc không khỏi. Sau 2 liệu trình thuốc của Đông Y Mạnh Ngọc, bệnh đã thuyên giảm 90%, không còn đau đầu, nghẹt mũi. Đặc biệt không bị tác dụng phụ như khi dùng kháng sinh." - Chị L. (TP.HCM)
+                    "Bị viêm xoang 10 năm, tôi đã dùng đủ các loại thuốc không khỏi. Sau 2 liệu trình của Đông Y Mạnh Ngọc, bệnh đã thuyên giảm 90%, không còn đau đầu, nghẹt mũi. Đặc biệt không bị tác dụng phụ như khi dùng kháng sinh." - Chị L. (TP.HCM)
                 </div>
             </div>
             
@@ -822,13 +862,13 @@
                 <div style="text-align: center;">
                     <span class="badge">Bài thuốc gia truyền</span>
                 </div>
-                <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ ZONA THẦN KINH</h3>
+                <h3 class="product-title" style="text-align: center;">THẢO DƯỢC ĐẶC TRỊ ZONA THẦN KINH</h3>
                 
                 <div class="cause-symptoms">
                     <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
                     <p><strong>Nguyên nhân:</strong> Do virus Varicella-zoster (cùng họ với virus gây bệnh thủy đậu) tái hoạt động khi hệ miễn dịch suy yếu.</p>
                     
-                    <img src="https://i.imgur.com/HCzGGML.jpg" alt="Virus zona" class="illustration-img">
+                    <img loading="lazy" src="https://i.imgur.com/HCzGGML.jpg" alt="Virus zona" class="illustration-img" onerror="this.style.display='none'">
                     
                     <p>Virus tồn tại trong cơ thể sau khi bị thủy đậu, khi gặp điều kiện thuận lợi (stress, tuổi già, bệnh tật) sẽ tái hoạt động gây bệnh zona.</p>
                     
@@ -842,10 +882,9 @@
                     </ul>
                     
                     <div class="img-group">
-                        <img src="https://i.imgur.com/NSlRDoD.jpg" alt="Triệu chứng zona 1">
-                        <img src="https://i.imgur.com/Zf17bGv.jpg" alt="Triệu chứng zona 2">
-                        <img src="https://i.imgur.com/oy9kfE2.jpg" alt="Triệu chứng zona 3">
-                        
+                        <img loading="lazy" src="https://i.imgur.com/NSlRDoD.jpg" alt="Triệu chứng zona 1" onerror="this.style.display='none'">
+                        <img loading="lazy" src="https://i.imgur.com/Zf17bGv.jpg" alt="Triệu chứng zona 2" onerror="this.style.display='none'">
+                        <img loading="lazy" src="https://i.imgur.com/oy9kfE2.jpg" alt="Triệu chứng zona 3" onerror="this.style.display='none'">
                     </div>
                 </div>
                 
@@ -871,9 +910,9 @@
                 </ul>
                 
                 <h4 class="section-title">Cách sử dụng</h4>
-                <p>Gồm có thuốc uống và thuốc bôi. Thuốc uống ngày uống 2 lần sáng tối, thuốc bôi ngày có thể bôi từ 3 đến 5 lần tùy cơ địa của người bệnh.
+                <p>Gồm có thảo dược uống và bôi. Thảo dược uống: ngày uống 2 lần sáng tối, thảo dược bôi: ngày có thể bôi từ 3 đến 5 lần tùy cơ địa của người bệnh.
                 <div class="testimonial">
-                    "Bị zona ở mặt rất đau, tôi sợ sẽ để lại sẹo. May mắn biết đến Đông Y Mạnh Ngọc, sau 1 tuần đã đỡ đau, 2 tuần thì khô mụn nước và không để lại sẹo. Thuốc dễ uống, không gây mệt mỏi như thuốc tây." - Bác N. (Đà Nẵng)
+                    "Bị zona ở mặt rất đau, tôi sợ sẽ để lại sẹo. May mắn biết đến Đông Y Mạnh Ngọc, sau 1 tuần đã đỡ đau, 2 tuần thì khô mụn nước và không để lại sẹo. Thảo dược dễ uống, không gây mệt mỏi như thuốc tây." - Bác N. (Đà Nẵng)
                 </div>
             </div>
             
@@ -882,7 +921,7 @@
     <div style="text-align: center;">
         <span class="badge">Bài thuốc gia truyền</span>
     </div>
-    <h3 class="product-title" style="text-align: center;">THUỐC ĐẶC TRỊ LOÉT MỒM MIỆNG, NẤM LỢI, NẤM LƯỠI</h3>
+    <h3 class="product-title" style="text-align: center;">THẢO DƯỢC ĐẶC TRỊ LOÉT MỒM MIỆNG, NẤM LỢI, NẤM LƯỠI</h3>
     
     <div class="cause-symptoms">
         <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
@@ -905,13 +944,13 @@
         </ul>
         
         <div class="img-group">
-            <img src="https://i.imgur.com/9U0xIue.jpg" alt="Triệu chứng loét miệng 1">
-            <img src="https://i.imgur.com/Wf0X3Es.jpg" alt="Triệu chứng loét miệng 2">
-            <img src="https://i.imgur.com/zItd4Yx.jpg" alt="Triệu chứng loét miệng 3">
+            <img loading="lazy" src="https://i.imgur.com/9U0xIue.jpg" alt="Triệu chứng loét miệng 1" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/Wf0X3Es.jpg" alt="Triệu chứng loét miệng 2" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/zItd4Yx.jpg" alt="Triệu chứng loét miệng 3" onerror="this.style.display='none'">
         </div>
     </div>
     
-    <h4 class="section-title">Công dụng bài thuốc</h4>
+    <h4 class="section-title">Công dụng của thảo dược</h4>
     <ul class="herbal-list">
         <li>Làm lành vết loét nhanh chóng trong 3-5 ngày</li>
         <li>Diệt nấm, kháng khuẩn hiệu quả</li>
@@ -925,10 +964,10 @@
     <p>Hoàng liên (kháng khuẩn), cam thảo (giảm đau), sinh địa (thanh nhiệt), đương quy (bổ huyết), trần bì (tiêu viêm), cùng nhiều vị thuốc bí truyền.</p>
     
     <h4 class="section-title">Cách sử dụng</h4>
-    <p>Thuốc dạng nước. Khi sử dụng có thể thấm ra bông gòn rồi chấm hoặc bịt vào vết loét, chỗ bị nhiễm nấm. Trường hợp vết loét hay nấm ở sâu bên trong khoang miệng thì có thể xịt trực tiếp vào bền trong hoặc ngậm một ngụm nhỏ chừng 3-5 phút rồi nhổ bỏ.</p>
+    <p>Thảo dược dạng nước. Khi sử dụng có thể thấm ra bông gòn rồi chấm hoặc bịt vào vết loét, chỗ bị nhiễm nấm. Trường hợp vết loét hay nấm ở sâu bên trong khoang miệng thì có thể xịt trực tiếp vào bền trong hoặc ngậm một ngụm nhỏ chừng 3-5 phút rồi nhổ bỏ.</p>
     
     <div class="testimonial">
-        "Con tôi 5 tuổi bị nấm lưỡi tái đi tái lại, uống kháng sinh không khỏi. Dùng thuốc của Đông Y Mạnh Ngọc 1 tuần đã hết trắng lưỡi, không tái phát sau 6 tháng." - Chị H. (Hải Phòng)
+        "Con tôi 5 tuổi bị nấm lưỡi tái đi tái lại, uống kháng sinh không khỏi. Dùng thảo dược của Đông Y Mạnh Ngọc 1 tuần đã hết trắng lưỡi, không tái phát sau 6 tháng." - Chị H. (Hải Phòng)
     </div>
 </div>
 
@@ -937,7 +976,7 @@
     <div style="text-align: center;">
         <span class="badge">Bài thuốc gia truyền</span>
     </div>
-    <h3 class="product-title" style="text-align: center;">RƯỢU THUỐC XOA BÓP ĐẶC TRỊ NHỨC MỎI XƯƠNG KHỚP, CHÂN TAY</h3>
+    <h3 class="product-title" style="text-align: center;">RƯỢU XOA BÓP THẢO DƯỢC ĐẶC TRỊ NHỨC MỎI XƯƠNG KHỚP, CHÂN TAY</h3>
     
     <div class="cause-symptoms">
         <h4 class="section-title">Công dụng</h4>
@@ -949,24 +988,24 @@
         </ul>
         
         <div class="img-group">
-            <img src="https://i.imgur.com/DkrVxhI.jpg" alt="Rượu thuốc xoa bóp 1">
-            <img src="https://i.imgur.com/r42a2gR.jpg" alt="Rượu thuốc xoa bóp 2">
-            <img src="https://i.imgur.com/me6xS4o.jpg" alt="Rượu thuốc xoa bóp 3">
+            <img loading="lazy" src="https://i.imgur.com/DkrVxhI.jpg" alt="Rượu thuốc xoa bóp 1" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/r42a2gR.jpg" alt="Rượu thuốc xoa bóp 2" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/me6xS4o.jpg" alt="Rượu thuốc xoa bóp 3" onerror="this.style.display='none'">
         </div>
     </div>
     
     <h4 class="section-title">Thành phần chính</h4>
-    <p>Đương quy (hoạt huyết), nghệ vàng (tiêu viêm), thiên niên kiện (mạnh gân cốt), huyết giác (tan máu bầm), quế chi (ấm kinh lạc), cùng nhiều vị thuốc quý ngâm với rượu gạo 40 độ trong 6 tháng.</p>
+    <p>Đương quy (hoạt huyết), thiên niên kiện (mạnh gân cốt), huyết giác (tan máu bầm), quế chi (ấm kinh lạc), cùng nhiều vị thuốc quý ngâm với rượu gạo 40 độ trong 6 tháng.</p>
     
     <h4 class="section-title">Cách sử dụng</h4>
     <ul>
         <li>Xoa bóp 2-3 lần/ngày tại vùng đau.</li>
-        <li>Có thể dùng bông thấm rượu thuốc lên chỗ nhức mỏi rồi massage nhẹ nhàng cho thuốc nhanh thẩm thấu.(không dùng cho vết thương hở).</li>
+        <li>Có thể dùng bông thấm rượu lên chỗ nhức mỏi rồi massage nhẹ nhàng cho nhanh thẩm thấu.(không dùng cho vết thương hở).</li>
         <li>Mỗi lần massage chừng 3 đến 5 phút.</li>
     </ul>
     
     <div class="testimonial">
-        "Tôi bị thoái hóa đốt sống cổ nhiều năm, dùng rượu thuốc xoa bóp của Đông Y Mạnh Ngọc kết hợp với châm cứu, sau 1 tháng đã giảm 80% cơn đau, cổ vận động linh hoạt hơn." - Bác P. (Nam Định)
+        "Tôi bị thoái hóa đốt sống cổ nhiều năm, dùng rượu xoa bóp của Đông Y Mạnh Ngọc kết hợp với châm cứu, sau 1 tháng đã giảm 80% cơn đau, cổ vận động linh hoạt hơn." - Bác P. (Nam Định)
     </div>
 </div>
             
@@ -975,29 +1014,29 @@
                 <h2 class="feedback-title">PHẢN HỒI THỰC TẾ CỦA KHÁCH HÀNG QUA ZALO</h2>
                 <div class="feedback-grid">
                     <div class="feedback-item">
-                        <img src="https://i.imgur.com/jFZhVHg.jpg" alt="Phản hồi khách hàng 1">
+                        <img loading="lazy" src="https://i.imgur.com/jFZhVHg.jpg" alt="Phản hồi khách hàng 1" onerror="this.style.display='none'">
                     </div>
                     <div class="feedback-item">
-                        <img src="https://i.imgur.com/Zm4qUk5.jpg" alt="Phản hồi khách hàng 2">
+                        <img loading="lazy" src="https://i.imgur.com/Zm4qUk5.jpg" alt="Phản hồi khách hàng 2" onerror="this.style.display='none'">
                     </div>
                     <div class="feedback-item">
-                        <img src="https://i.imgur.com/BmlkfEs.jpg" alt="Phản hồi khách hàng 3">
+                        <img loading="lazy" src="https://i.imgur.com/BmlkfEs.jpg" alt="Phản hồi khách hàng 3" onerror="this.style.display='none'">
                     </div>
                     <div class="feedback-item">
-                        <img src="https://i.imgur.com/O106e0E.jpg" alt="Phản hồi khách hàng 4">
+                        <img loading="lazy" src="https://i.imgur.com/O106e0E.jpg" alt="Phản hồi khách hàng 4" onerror="this.style.display='none'">
                     </div>
                     <div class="feedback-item">
-                        <img src="https://i.imgur.com/4tuusBo.jpg" alt="Phản hồi khách hàng 5">
+                        <img loading="lazy" src="https://i.imgur.com/4tuusBo.jpg" alt="Phản hồi khách hàng 5" onerror="this.style.display='none'">
                     </div>
                     <div class="feedback-item">
-                        <img src="https://i.imgur.com/QDyuU3h.jpg" alt="Phản hồi khách hàng 6">
+                        <img loading="lazy" src="https://i.imgur.com/QDyuU3h.jpg" alt="Phản hồi khách hàng 6" onerror="this.style.display='none'">
                     </div>
                 </div>
             </div>
             
             <div id="contact" class="guarantee">
                 <h3>QUY TRÌNH ĐIỀU TRỊ</h3>
-                <p>1. Khám & tư vấn miễn phí → 2. Kê đơn thuốc phù hợp → 3. Giao thuốc tận nhà → 4. Theo dõi trong quá trình dùng thuốc</p>
+                <p>1. Khám & tư vấn miễn phí → 2. Kê đơn phù hợp với từng người → 3. Giao thảo dược tận nhà → 4. Theo dõi trong quá trình sử dụng thảo dược</p>
                 <div class="footer-contact-info">
                     <div class="footer-contact-item" onclick="window.open('https://maps.google.com?q=Số+213+đường+Quang+Trung,+P.+Tân+Thịnh,+TP.+Thái+Nguyên')">
                         <i class="fas fa-map-marker-alt"></i>
@@ -1022,7 +1061,7 @@
                         <i class="fab fa-zalo"></i> Hotline tư vấn miễn phí: 0366.666.000
                     </a>
                 </div>
-                <p>Các thang thuốc của Đông Y Mạnh Ngọc được bào chế dựa trên các bài thuốc cổ phương quy định trong Dược Điển Việt Nam 5. Các bài thuốc được lưu hành nội bộ chỉ sử dụng cho bệnh nhân của nhà thuốc. Website: luongymanhngoc.xyz là trang thông tin nội bộ chính thức của nhà thuốc. Nội dung trên trang chỉ có tính chất tham khảo, không thay thế cho việc chuẩn đoán hoặc điều trị.<p>
+                <p>Các loại thảo dược của Đông Y Mạnh Ngọc được sử dụng dựa trên các bài thuốc cổ phương quy định trong Dược Điển Việt Nam 5. Thông tin trên website: luongymanhngoc.xyz chỉ dành cho mục đích tham khảo, không phải tư vấn y tế.<p>
                 
                 <p>Copyright © 2025 Đông Y Mạnh Ngọc. All rights reserved<p>
             </div>
@@ -1051,5 +1090,71 @@
             }
         });
     </script>
+
+<div class="contact-fixed">
+    <a href="https://zalo.me/0366666000" class="zalo" title="Zalo" target="_blank"><i class="fab fa-zalo"></i></a>
+    <a href="tel:0396147774" class="phone" title="Gọi điện"><i class="fas fa-phone-alt"></i></a>
+    <a href="https://m.me/61575060365524" class="messenger" title="Messenger" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+</div>
+<!-- Liên hệ cố định ở góc phải -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<style>
+.contact-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.contact-fixed a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 26px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    animation: pulse 1.5s infinite;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-fixed a:hover {
+    transform: scale(1.1);
+}
+
+.contact-fixed .zalo {
+    background-color: #0084ff;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+
+.contact-fixed .phone { background-color: #28a745; }
+.contact-fixed .messenger {
+    background-color: #0078FF;
+    display: flex;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 132, 255, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 132, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 132, 255, 0); }
+}
+</style>
+
+<div class="contact-fixed">
+    <a href="https://zalo.me/0366666000" class="zalo" title="Zalo" target="_blank"></a>
+    <a href="tel:0396147774" class="phone" title="Gọi điện"><i class="fas fa-phone-alt"></i></a>
+    <a href="https://m.me/61575060365524" class="messenger" title="Messenger" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+</div>
+
 </body>
 </html>
