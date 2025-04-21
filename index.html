@@ -310,7 +310,6 @@
             object-fit: contain;
             border: 1px solid #ddd;
             margin-bottom: 10px;
-            background-color: #f5f5f5;
         }
         
         .certificate-item p {
@@ -345,7 +344,6 @@
             width: 100%;
             border-radius: 5px;
             border: 1px solid #ddd;
-            background-color: #f5f5f5;
         }
         
         .footer-contact-info {
@@ -457,7 +455,6 @@
             height: auto;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            background-color: #f5f5f5;
         }
 
         /* Hình ảnh minh họa */
@@ -469,7 +466,6 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             border: 1px solid #ddd;
-            background-color: #f5f5f5;
         }
 
         .img-group {
@@ -487,7 +483,6 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             border: 1px solid #ddd;
-            background-color: #f5f5f5;
         }
 
         /* Footer Social Links */
@@ -519,70 +514,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        /* Floating Contact Buttons */
-        .floating-contact {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .floating-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .floating-btn:hover {
-            transform: translateY(-8px) scale(1.15) rotate(-2deg);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-        }
-
-        .floating-btn.zalo {
-            background-color: #0068ff;
-        }
-
-        .floating-btn.phone {
-            background-color: #0a5c36;
-        }
-
-        .floating-btn.messenger {
-            background-color: #006AFF;
-        }
-
-        .floating-btn .tooltip {
-            position: absolute;
-            right: 70px;
-            background-color: white;
-            color: #333;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .floating-btn:hover .tooltip {
-            opacity: 1;
         }
 
         /* Responsive */
@@ -655,71 +586,45 @@
             .img-group img {
                 min-width: 150px;
             }
-
-            /* Adjust floating buttons for mobile */
-            .floating-contact {
-                right: 10px;
-                bottom: 10px;
-            }
-
-            .floating-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-
-            .floating-btn .tooltip {
-                display: none;
-            }
-        }
-
-        /* Image fallback styling */
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-
-        .img-fallback {
-            width: 100%;
-            height: 200px;
-            background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 14px;
-            border-radius: 5px;
         }
     
-.floating-btn.zalo img.zalo-icon {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+.contact-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
 }
 
-.floating-btn:hover img.zalo-icon {
-    transform: scale(1.2) rotate(5deg);
+.contact-fixed a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    animation: pulse 1.5s infinite;
+    transition: all 0.3s ease-in-out;
 }
 
+.contact-fixed a:hover {
+    transform: scale(1.1);
+}
+
+.contact-fixed .zalo { background-color: #0084ff; }
+.contact-fixed .phone { background-color: #28a745; }
+.contact-fixed .messenger { background-color: #0078FF; }
 
 @keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,255,255,0.3); }
-    30% { transform: scale(1.15); box-shadow: 0 0 25px rgba(255,255,255,0.6); }
-    60% { transform: scale(1.05); box-shadow: 0 0 15px rgba(255,255,255,0.5); }
-    100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,255,255,0.3); }
-}
-
-.floating-btn {
-    animation: pulse 1.8s infinite ease-in-out;
-}
-    50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(255,255,255,0.6); }
-    100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,255,255,0.5); }
-}
-
-.floating-btn {
-    animation: pulse 2.5s infinite ease-in-out;
+    0% { box-shadow: 0 0 0 0 rgba(0, 132, 255, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 132, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 132, 255, 0); }
 }
 
 </style>
@@ -780,16 +685,16 @@
         </div>
         
         <div class="banner-images">
-            <img src="https://i.imgur.com/zDzIRJK.jpg" alt="Hình ảnh nhà thuốc Đông Y Mạnh Ngọc" width="280" height="210" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Hình ảnh nhà thuốc'), this)">
-            <img src="https://i.imgur.com/j5YlbeA.jpg" alt="Không gian bên trong nhà thuốc" width="280" height="210" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Không gian bên trong'), this)">
-            <img src="https://i.imgur.com/CiTK62b.jpg" alt="Thảo dược tại nhà thuốc" width="280" height="210" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Thảo dược nhà thuốc'), this)">
-            <img src="https://i.imgur.com/DR9RJkt.jpg" alt="Lương y Nguyễn Mạnh Ngọc" width="280" height="210" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Lương y Nguyễn Mạnh Ngọc'), this)">
+            <img loading="lazy" src="https://i.imgur.com/zDzIRJK.jpg" alt="Hình ảnh nhà thuốc 1" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/j5YlbeA.jpg" alt="Hình ảnh nhà thuốc 2" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/CiTK62b.jpg" alt="Hình ảnh nhà thuốc 3" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/DR9RJkt.jpg" alt="Hình ảnh nhà thuốc 4" onerror="this.style.display='none'">
         </div>
         
         <div class="main-content">
             <div id="about" class="product-intro">
                 <div class="section-header">
-                    <h2>Giới Thiệu về Đông Y Mạnh Ngọc</h2>
+                    <h2>Giới Thiệu Về Đông Y Mạnh Ngọc</h2>
                 </div>
                 <p>Lương y: Nguyễn Mạnh Ngọc sinh năm 1958, quê gốc tại Thái Bình nhưng hiện đang sinh sống và hành nghề tại thành phố Thái Nguyên. Sinh ra trong gia đình có truyền thống y học cổ truyền lâu đời, từ nhỏ ông đã được ông nội dẫn lên rừng hái thuốc và truyền dạy những bí thuật sử dụng thảo dược quý để chữa các bệnh ngoài da như: viêm da, nấm ngứa, tổ đỉa, á sừng, đặc biệt là sùi mào gà và mụn cóc sinh dục.</p>
                 
@@ -799,15 +704,15 @@
                 
                 <div class="certificates">
                     <div class="section-header">
-                        <h2>Thẻ hội viên & Bằng Khen</h2>
+                        <h2>Vinh Danh Nghề Nghiệp</h2>
                     </div>
                     <div class="certificate-grid">
                         <div class="certificate-item">
-                            <img src="https://i.imgur.com/Uuws4Gn.jpg" alt="Thẻ hội viên Hội đồng Y Việt Nam" width="300" height="200" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Thẻ hội viên'), this)">
+                            <img loading="lazy" src="https://i.imgur.com/Uuws4Gn.jpg" alt="Thẻ hội viên Hội đồng Y Việt Nam" onerror="this.style.display='none'">
                             <p>Thẻ hội viên Hội đồng Y Việt Nam<br>Số: 20801469</p>
                         </div>
                         <div class="certificate-item">
-                            <img src="https://i.imgur.com/2iL0NJY.jpg" alt="Vinh danh nghề nghiệp" width="300" height="200" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Giấy vinh danh'), this)">
+                            <img loading="lazy" src="https://i.imgur.com/2iL0NJY.jpg" alt="Vinh danh nghề nghiệp" onerror="this.style.display='none'">
                             <p>Vinh danh Lương y Nguyễn Mạnh Ngọc<br>Hội đồng Y tính Thái Nguyên (2015)</p>
                         </div>
                     </div>
@@ -832,8 +737,8 @@
         <p>Với kinh nghiệm hơn 40 năm trong đông y cổ truyền, Đông Y Mạnh Ngọc đã nghiên cứu và chiết xuất ra một loại thảo dược đặc trị sùi mào gà, mụn sinh dục, nấm móng tay chân, nấm đầu... Với thành phần hoàn toàn là thảo dược thiên nhiên nên độ an toàn và hiệu quả rất cao, trị tận gốc và không tái phát lại. Đặc biệt ở những khu vực khó tiếp cận như: khoang miệng...hậu môn.</p>
         
         <div class="img-group" style="margin: 20px 0;">
-            <img src="https://i.imgur.com/oQVzaQg.jpg" alt="Sản phẩm trị sùi mào gà Đông Y Mạnh Ngọc" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Sản phẩm trị sùi mào gà'), this)">
-            <img src="https://i.imgur.com/b3V3IK6.jpg" alt="Hộp thuốc trị sùi mào gà" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Hộp thuốc đặc trị'), this)">
+            <img loading="lazy" src="https://i.imgur.com/oQVzaQg.jpg" alt="Sản phẩm trị sùi mào gà 1" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/b3V3IK6.jpg" alt="Sản phẩm trị sùi mào gà 2" onerror="this.style.display='none'">
         </div>
     </div>
     
@@ -841,7 +746,7 @@
                     <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
                     <p><strong>Nguyên nhân:</strong> Do virus HPV (Human Papilloma Virus) gây ra, lây truyền chủ yếu qua đường tình dục.</p>
                     
-                    <img src="https://i.imgur.com/TECPVok.jpg" alt="Virus HPV gây sùi mào gà" class="illustration-img" width="500" height="375" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Virus HPV'), this)">
+                    <img loading="lazy" src="https://i.imgur.com/TECPVok.jpg" alt="Virus HPV" class="illustration-img" onerror="this.style.display='none'">
                     
                     <p>Có hơn 100 chủng HPV khác nhau, trong đó HPV type 6 và 11 gây khoảng 90% trường hợp sùi mào gà. Một số type HPV nguy cơ cao (16, 18, 31, 33, 45) có thể dẫn đến ung thư cổ tử cung, hậu môn, dương vật.</p>
                     
@@ -855,9 +760,9 @@
                     </ul>
                     
                     <div class="img-group">
-                        <img src="https://i.imgur.com/bQJQaRs.jpg" alt="Triệu chứng sùi mào gà ở nam giới" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Triệu chứng sùi mào gà'), this)">
-                        <img src="https://i.imgur.com/2Py1RR8.jpg" alt="Triệu chứng sùi mào gà ở nữ giới" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Triệu chứng ở nữ'), this)">
-                        <img src="https://i.imgur.com/3dgpnZe.jpg" alt="Sùi mào gà ở miệng" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Sùi mào gà miệng'), this)">
+                        <img loading="lazy" src="https://i.imgur.com/bQJQaRs.jpg" alt="Triệu chứng sùi mào gà 1" onerror="this.style.display='none'">
+                        <img loading="lazy" src="https://i.imgur.com/2Py1RR8.jpg" alt="Triệu chứng sùi mào gà 2" onerror="this.style.display='none'">
+                        <img loading="lazy" src="https://i.imgur.com/3dgpnZe.jpg" alt="Triệu chứng sùi mào gà 3" onerror="this.style.display='none'">
                     </div>
                 </div>
                 
@@ -900,7 +805,7 @@
                     <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
                     <p><strong>Nguyên nhân:</strong> Do nhiễm khuẩn, dị ứng, cấu trúc mũi bất thường hoặc các bệnh lý về đường hô hấp. Dựa vào vị trí mắc bệnh mà chúng ta có thể chia ra thành các loại viêm xoang như sau:</p>
                     
-                    <img src="https://i.imgur.com/jXHvooW.jpg" alt="Phân loại các dạng viêm xoang" class="illustration-img" width="500" height="375" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Phân loại viêm xoang'), this)">
+                    <img loading="lazy" src="https://i.imgur.com/jXHvooW.jpg" alt="Phân loại viêm xoang" class="illustration-img" onerror="this.style.display='none'">
                     <p>Dựa vào thời gian mắc bệnh, chúng lại được chia thành:</p>
                     <ul>
                         <li>Viêm xoang cấp: Ở giai đoạn này, bệnh nhân thường xuất hiện các triệu chứng tương tự như cảm lạnh (hắt hơi, sổ mũi, nghẹt mũi, vùng mặt đau nhức…). Bệnh diễn tiến trong thời gian ngắn, các triệu chứng thường đột ngột xuất hiện và biến mất sau khoảng 10 – 14 ngày. Thường thì viêm xoang cấp sẽ khỏi trong thời gian dưới 4 tuần.</li>
@@ -919,8 +824,8 @@
                     </ul>
                     
                     <div class="img-group">
-                        <img src="https://i.imgur.com/of6C9iO.jpg" alt="Triệu chứng viêm xoang thường gặp" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Triệu chứng viêm xoang'), this)">
-                        <img src="https://i.imgur.com/JoVTngb.jpg" alt="Vị trí đau do viêm xoang" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Vị trí đau'), this)">
+                        <img loading="lazy" src="https://i.imgur.com/of6C9iO.jpg" alt="Triệu chứng viêm xoang 1" onerror="this.style.display='none'">
+                        <img loading="lazy" src="https://i.imgur.com/JoVTngb.jpg" alt="Triệu chứng viêm xoang 2" onerror="this.style.display='none'">
                     </div>
                 </div>
                 
@@ -963,7 +868,7 @@
                     <h4 class="section-title">Nguyên nhân và triệu chứng</h4>
                     <p><strong>Nguyên nhân:</strong> Do virus Varicella-zoster (cùng họ với virus gây bệnh thủy đậu) tái hoạt động khi hệ miễn dịch suy yếu.</p>
                     
-                    <img src="https://i.imgur.com/HCzGGML.jpg" alt="Virus Varicella-zoster gây bệnh zona" class="illustration-img" width="500" height="375" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Virus zona'), this)">
+                    <img loading="lazy" src="https://i.imgur.com/HCzGGML.jpg" alt="Virus zona" class="illustration-img" onerror="this.style.display='none'">
                     
                     <p>Virus tồn tại trong cơ thể sau khi bị thủy đậu, khi gặp điều kiện thuận lợi (stress, tuổi già, bệnh tật) sẽ tái hoạt động gây bệnh zona.</p>
                     
@@ -977,9 +882,9 @@
                     </ul>
                     
                     <div class="img-group">
-                        <img src="https://i.imgur.com/NSlRDoD.jpg" alt="Triệu chứng zona thần kinh điển hình" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Triệu chứng zona'), this)">
-                        <img src="https://i.imgur.com/DOK0PHZ.jpg" alt="Zona thần kinh ở lưng" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Zona ở lưng'), this)">
-                        <img src="https://i.imgur.com/oy9kfE2.jpg" alt="Zona thần kinh ở mặt" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Zona ở mặt'), this)">
+                        <img loading="lazy" src="https://i.imgur.com/NSlRDoD.jpg" alt="Triệu chứng zona 1" onerror="this.style.display='none'">
+                        <img loading="lazy" src="https://i.imgur.com/DOK0PHZ.jpg" alt="Triệu chứng zona 2" onerror="this.style.display='none'">
+                        <img loading="lazy" src="https://i.imgur.com/oy9kfE2.jpg" alt="Triệu chứng zona 3" onerror="this.style.display='none'">
                     </div>
                 </div>
                 
@@ -1039,9 +944,9 @@
         </ul>
         
         <div class="img-group">
-            <img src="https://i.imgur.com/9U0xIue.jpg" alt="Loét miệng nhiệt miệng thông thường" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Loét miệng'), this)">
-            <img src="https://i.imgur.com/Wf0X3Es.jpg" alt="Nấm lưỡi Candida" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Nấm lưỡi'), this)">
-            <img src="https://i.imgur.com/zItd4Yx.jpg" alt="Loét miệng nặng" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Loét miệng nặng'), this)">
+            <img loading="lazy" src="https://i.imgur.com/9U0xIue.jpg" alt="Triệu chứng loét miệng 1" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/Wf0X3Es.jpg" alt="Triệu chứng loét miệng 2" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/zItd4Yx.jpg" alt="Triệu chứng loét miệng 3" onerror="this.style.display='none'">
         </div>
     </div>
     
@@ -1083,9 +988,9 @@
         </ul>
         
         <div class="img-group">
-            <img src="https://i.imgur.com/DkrVxhI.jpg" alt="Rượu thuốc xoa bóp Đông Y Mạnh Ngọc" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Rượu thuốc'), this)">
-            <img src="https://i.imgur.com/r42a2gR.jpg" alt="Hộp rượu thuốc xoa bóp" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Hộp rượu thuốc'), this)">
-            <img src="https://i.imgur.com/me6xS4o.jpg" alt="Thành phần rượu thuốc" width="300" height="225" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Thành phần'), this)">
+            <img loading="lazy" src="https://i.imgur.com/DkrVxhI.jpg" alt="Rượu thuốc xoa bóp 1" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/r42a2gR.jpg" alt="Rượu thuốc xoa bóp 2" onerror="this.style.display='none'">
+            <img loading="lazy" src="https://i.imgur.com/me6xS4o.jpg" alt="Rượu thuốc xoa bóp 3" onerror="this.style.display='none'">
         </div>
     </div>
     
@@ -1109,22 +1014,22 @@
                 <h2 class="feedback-title">PHẢN HỒI THỰC TẾ CỦA KHÁCH HÀNG QUA ZALO</h2>
                 <div class="feedback-grid">
                     <div class="feedback-item">
-                        <img src="https://i.imgur.com/jFZhVHg.jpg" alt="Phản hồi khách hàng về trị sùi mào gà" width="450" height="600" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Phản hồi khách hàng 1'), this)">
+                        <img loading="lazy" src="https://i.imgur.com/jFZhVHg.jpg" alt="Phản hồi khách hàng 1" onerror="this.style.display='none'">
                     </div>
                     <div class="feedback-item">
-                        <img src="https://i.imgur.com/Zm4qUk5.jpg" alt="Phản hồi khách hàng về trị viêm xoang" width="450" height="600" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Phản hồi khách hàng 2'), this)">
+                        <img loading="lazy" src="https://i.imgur.com/Zm4qUk5.jpg" alt="Phản hồi khách hàng 2" onerror="this.style.display='none'">
                     </div>
                     <div class="feedback-item">
-                        <img src="https://i.imgur.com/BmlkfEs.jpg" alt="Phản hồi khách hàng về trị zona" width="450" height="600" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Phản hồi khách hàng 3'), this)">
+                        <img loading="lazy" src="https://i.imgur.com/BmlkfEs.jpg" alt="Phản hồi khách hàng 3" onerror="this.style.display='none'">
                     </div>
                     <div class="feedback-item">
-                        <img src="https://i.imgur.com/O106e0E.jpg" alt="Phản hồi khách hàng về trị loét miệng" width="450" height="600" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Phản hồi khách hàng 4'), this)">
+                        <img loading="lazy" src="https://i.imgur.com/O106e0E.jpg" alt="Phản hồi khách hàng 4" onerror="this.style.display='none'">
                     </div>
                     <div class="feedback-item">
-                        <img src="https://i.imgur.com/4tuusBo.jpg" alt="Phản hồi khách hàng về rượu xoa bóp" width="450" height="600" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Phản hồi khách hàng 5'), this)">
+                        <img loading="lazy" src="https://i.imgur.com/4tuusBo.jpg" alt="Phản hồi khách hàng 5" onerror="this.style.display='none'">
                     </div>
                     <div class="feedback-item">
-                        <img src="https://i.imgur.com/QDyuU3h.jpg" alt="Phản hồi khách hàng về hiệu quả điều trị" width="450" height="600" loading="lazy" onerror="this.onerror=null; this.parentNode.replaceChild(createImageFallback('Phản hồi khách hàng 6'), this)">
+                        <img loading="lazy" src="https://i.imgur.com/QDyuU3h.jpg" alt="Phản hồi khách hàng 6" onerror="this.style.display='none'">
                     </div>
                 </div>
             </div>
@@ -1163,22 +1068,6 @@
         </div>
     </div>
 
-    <!-- Floating Contact Buttons -->
-    <div class="floating-contact">
-        <div class="floating-btn zalo" onclick="window.open('https://zalo.me/0366666000', '_blank')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" class="zalo-icon">
-            <span class="tooltip">Chat Zalo: 0366.666.000</span>
-        </div>
-        <div class="floating-btn phone" onclick="window.open('tel:0396147774', '_blank')">
-            <i class="fas fa-phone-alt"></i>
-            <span class="tooltip">Gọi ngay: 0396.147.774</span>
-        </div>
-        <div class="floating-btn messenger" onclick="window.open('https://m.me/61575060365524', '_blank')">
-            <i class="fab fa-facebook-messenger"></i>
-            <span class="tooltip">Nhắn tin Facebook</span>
-        </div>
-    </div>
-
     <script>
         // Thêm sự kiện click cho các phần tử contact (dự phòng nếu onclick không hoạt động)
         document.querySelectorAll('.contact-item, .footer-contact-item').forEach(item => {
@@ -1200,35 +1089,72 @@
                 navMenu.classList.remove('scrolled');
             }
         });
-
-        // Tạo fallback khi hình ảnh không tải được
-        function createImageFallback(altText) {
-            const fallbackDiv = document.createElement('div');
-            fallbackDiv.className = 'img-fallback';
-            fallbackDiv.textContent = altText;
-            return fallbackDiv;
-        }
-
-        // Thêm lazy loading cho hình ảnh
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const image = entry.target;
-                            image.src = image.dataset.src || image.src;
-                            imageObserver.unobserve(image);
-                        }
-                    });
-                });
-
-                images.forEach(image => {
-                    imageObserver.observe(image);
-                });
-            }
-        });
     </script>
+
+<div class="contact-fixed">
+    <a href="https://zalo.me/0366666000" class="zalo" title="Zalo" target="_blank"><i class="fab fa-zalo"></i></a>
+    <a href="tel:0396147774" class="phone" title="Gọi điện"><i class="fas fa-phone-alt"></i></a>
+    <a href="https://m.me/61575060365524" class="messenger" title="Messenger" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+</div>
+<!-- Liên hệ cố định ở góc phải -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<style>
+.contact-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.contact-fixed a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 26px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    animation: pulse 1.5s infinite;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-fixed a:hover {
+    transform: scale(1.1);
+}
+
+.contact-fixed .zalo {
+    background-color: #0084ff;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+
+.contact-fixed .phone { background-color: #28a745; }
+.contact-fixed .messenger {
+    background-color: #0078FF;
+    display: flex;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 132, 255, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 132, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 132, 255, 0); }
+}
+</style>
+
+<div class="contact-fixed">
+    <a href="https://zalo.me/0366666000" class="zalo" title="Zalo" target="_blank"></a>
+    <a href="tel:0396147774" class="phone" title="Gọi điện"><i class="fas fa-phone-alt"></i></a>
+    <a href="https://m.me/61575060365524" class="messenger" title="Messenger" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+</div>
+
 </body>
 </html>
